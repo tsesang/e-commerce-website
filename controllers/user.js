@@ -39,4 +39,31 @@ const register = async (req, res) => {
   }
 };
 
-module.exports = register;
+const login=async (req,res)=>{
+    //email validation
+    const accountExists = await userModel.findOne({email:req.body.email})
+    if(accountExists){
+        //password validation
+        const correct = await bcrypt.compare(req.body.password,accountExists.password);
+        if(correct){
+            req.session.email=req.body.email;  // or accountexists.email
+            return res.redirect('/')
+        }
+        //incorrect password
+            return res.render('login',{message:"password incorrect ... "})
+    }
+    else{
+        return res.render('login',{message:"invalid email"});
+    }
+}
+
+const logout = (req,res)=>{
+    req.session.email=false;
+    res.redirect('/');
+}
+
+module.exports = {register,login,logout};
+
+
+
+
