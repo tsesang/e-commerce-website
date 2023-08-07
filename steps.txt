@@ -1,0 +1,5 @@
+1.use ready made template from internet
+    create diff route for diff html 
+2.w3lyaout to download the website layout 
+3.file structure -> zip file > web folder >  
+
