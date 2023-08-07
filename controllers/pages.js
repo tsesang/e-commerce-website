@@ -13,7 +13,7 @@ const loginPage = (req,res)=>{
 }
 
 const registerPage = (req,res)=>{
-    res.render('register')
+    res.render('register',{msg:""})
 }
 
 module.exports = {home,about,loginPage,registerPage}

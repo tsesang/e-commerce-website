@@ -3,3 +3,7 @@
 2.w3lyaout to download the website layout 
 3.file structure -> zip file > web folder >  
 
+
+
+if use variable in ejs file --> whenever render this file everytime it will expect a value
+    res.render('register',{msg:false})
